@@ -1,24 +1,19 @@
-package com.company;
-import java.util.Scanner;
-
 public class Ex2 {
-    static void isit(String[] array) {
+    static boolean isit(String[] array) {
         int n = array.length;
-        int k = 0;
+        boolean k = false;
         for (int i = 0; i < n; i++) {
             if (array[i].equals("str"))
-                k++;
+                k = true;
         }
-        boolean h = false;
-        if (k > 0)
-            System.out.println("true");
-        else {
-            System.out.println("false");
-        }
+        return k;
     }
+
 
     public static void main(String[] args) {
         String[] arr = {"g", "f", "t", "str", "o"};
-        isit(arr);
+        System.out.println(isit(arr));
+        String[] arr1 = {"g", "f", "t", "o"};
+        System.out.println(isit(arr1));
     }
 }
