@@ -18,9 +18,9 @@ public class ProductsDaoCsvImplementation implements ProductsDao{
 
 
     @Override
-    public boolean exists(String product) throws IOException {//FIXME при вызове печеья возвращает false
+    public boolean exists(String product) throws IOException {
         boolean exists = false;
-        File file = new File("products.txt");
+        File file = new File("products.csv");
         Reader reader = new FileReader(file);
         BufferedReader br = new BufferedReader(reader);
         String str = br.readLine();
