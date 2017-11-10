@@ -12,6 +12,6 @@ public class Main {
         //Product product = new Product("хлеб", 40, "Хлебзавод1");
         //dao.add(product);
 
-        System.out.println(dao.exists("печенье"));
+        System.out.println(dao.exists("хлеб"));
     }
 }
