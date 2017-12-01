@@ -4,6 +4,10 @@ public class LinkedList<T> {
     private Node<T> head;
     private int count;
 
+    public LinkedList() {
+        count = 0;
+    }
+
     void add(T elem) {
         Node<T> node = new Node<>(elem, null);
         if (head == null) {
@@ -15,10 +19,42 @@ public class LinkedList<T> {
             }
             cur.setNext(node);
         }
+        count++;
     }
 
     T get(int i) {
+        if (i < 0 || i >= count) {
+            throw new IndexOutOfBoundsException("Incorrect index: " + i);
+        } else {
+            //FIXME implement returning real element
+            return null;
+        }
+    }
 
+    void remove(int i) {
+        Node<T> curNode = head;
+        if (head != null) {
+            if (i > 0) {
+                if (i < count) {
+                    int j = 0;
+                    i--;
+                    while (j != i) {
+                        curNode = curNode.getNext();
+                        j++;
+                    }
+                    Node<T> elemToBeNext = curNode.getNext().getNext();
+                    curNode.setNext(elemToBeNext);
+                    count--;
+                }
+            } else {
+                head = head.getNext();
+                count--;
+            }
+        }
+    }
+
+    int size() {
+        return count;
     }
 
     @Override
@@ -69,3 +105,22 @@ public class LinkedList<T> {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
